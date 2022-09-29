@@ -14,16 +14,42 @@ import {
 
 import { Alert, TouchableOpacity, Image } from 'react-native';
 import { Button } from "../components/Button";
-
+import firestore from '@react-native-firebase/firestore';
 import auth, { firebase } from '@react-native-firebase/auth'
 import { useNavigation } from "@react-navigation/native";
 import { SignOut, MagnifyingGlass } from "phosphor-react-native";
+import { useEffect, useState } from "react";
 
 
 export function Services(){
 
     const { colors } = useTheme();
     const navigation = useNavigation();
+
+    const [services, setServices] = useState([]);
+
+    // Filtrar os serviços 
+
+    useEffect(() => {
+        const service = firestore()
+        .collection('services')
+        .onSnapshot(snapshot => {
+            const data = snapshot.docs.map(doc =>{
+                const { descricao, tituloDescricao, precoMedio } = doc.data();
+
+                return{
+                    descricao,
+                    tituloDescricao,
+                    precoMedio
+                }
+            })
+            setServices(data);
+        });
+
+        return service;
+        
+
+    },[])
 
 
     function handleLogout(){
