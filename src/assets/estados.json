@@ -1,0 +1,24 @@
+{
+    "estados": [
+      {
+        "sigla": "AC",
+        "nome": "Acre",
+        "cidades": [
+          "Acrelândia",
+          "Assis Brasil",
+          "Brasiléia",
+          "Bujari"
+        ]
+      }, 
+      {
+        "sigla": "AL",
+        "nome": "Alagoas",
+        "cidades": [
+          "Água Branca",
+          "Anadia",
+          "Arapiraca",
+          "Atalaia"
+        ]
+      }
+    ]
+  }
