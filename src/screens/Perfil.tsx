@@ -90,7 +90,7 @@ export function Perfil(){
             </HStack>
 
             <Text color="white" textAlign="center" mt={2} fontSize="md">
-                        Jean Michel Kremer Oviedo
+                        Jean Michel Kremer Ovied o
             </Text>
 
             <Box mt={10}>
